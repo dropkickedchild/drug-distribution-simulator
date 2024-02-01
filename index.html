@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>drug distribution simulator</title>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+
+	<body>
+		<div id="stats_display">
+			<h1 class="title">Stats</h1>
+
+			<p>$<span id="money_count">0</span></p>
+			<p>MPS:<span id="MPS_count">0</span></p>
+		</div>
+
+		<button id="distribute" onclick="distributeDrug()">Distribute!</button>
+
+		<div id="shop">
+			<div id="drugs">
+				<h1 class="title">Drugs</h1>
+
+				<div id="weed_unlock">
+					<p>Weed</p>
+					<p>Unlock Cost: FREE!</p>
+					<p>Cost Per: $5</p>
+
+					<button id="buy_weed" onclick="purchaseDrug('Weed', this)">
+						Purchase!
+					</button>
+				</div>
+			</div>
+
+			<div id="distribution_locations">
+				<h1 class="title">Distribution Locations</h1>
+
+				<div id="school_bathroom_unlock">
+					<p>School Bathroom</p>
+					<p>Unlock Cost: FREE!</p>
+					<p>Price Multiplier: 1.15</p>
+
+					<button
+						id="buy_school_bathroom"
+						onclick="purchaseDistributeLocation('SchoolBathroom', this)"
+					>
+						Purchase!
+					</button>
+				</div>
+			</div>
+
+			<div id="workers">
+				<h1 class="title">Workers</h1>
+
+				<div id="jesse_unlock">
+					<p>Jesse</p>
+					<p>Unlock Cost: 500</p>
+					<p>
+						Jesse. We need to cook. Automatically sells 2 of your
+						products per second.
+					</p>
+
+					<button
+						id="buy_jesse"
+						onclick="purchaseWorker('Jesse', this)"
+					>
+						Purchase!
+					</button>
+				</div>
+			</div>
+
+			<div id="upgrades">
+				<h1 class="title">Upgrades</h1>
+
+				<div id="walter_white_power_unlock">
+					<p>Walter White Learning</p>
+					<p>Unlock Cost: 1000</p>
+					<p>
+						The world's best meth cook will teach all your
+						employees. Increases your price per product by 1.5x
+					</p>
+
+					<button
+						id="buy_walter_white_power"
+						onclick="purchaseUpgrade('WalterWhitePower', this)"
+					>
+						Purchase!
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="./main.js"></script>
+</html>
